@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="cake.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Cake Flavors</title>
+</head>
+<body>
+    <div class="container">
+        <div class="itemsContainer">
+            <div class="strawberry" onclick="moveDownStrawberry()">
+                <div class="stick"></div>
+                <div class="leaf"></div> <div class="leaf"></div>
+                <div class="leaf"></div>
+                <div class="seed"></div> <div class="seed"></div>
+                <div class="seed"></div> <div class="seed"></div>
+                <div class="seed"></div> <div class="seed"></div>
+            </div>
+            <div class="chocolate" onclick="moveDownChocolate()"></div>
+            <div class="carrot" onclick="moveDownCarrot()">
+                <div class="stick"></div>
+                <div class="stick" style="rotate: -20deg; left: 15%;"></div>
+                <div class="stick" style="rotate: 20deg; left: 65%;"></div>
+                <div class="carrotLines"></div> <div class="carrotLines"></div>
+                <div class="carrotLines"></div> <div class="carrotLines"></div>
+                <div class="carrotLines"></div> <div class="carrotLines"></div>
+            </div>
+            <div class="vanilla" onclick="moveDownVanilla()">
+                <div class="vanilla"></div>
+                <div class="vanillaFlower"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cakeContainer">
+        <div class="icing"></div>
+        <div class="icing-drip"></div>
+        <div class="cake"></div>
+        <div class="filling"></div>
+        <div class="plate"></div>
+    </div>
+    
+      <div class="table"></div>
+<script src="cake.js"></script>
+</body>
+</html>

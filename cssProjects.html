@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>CSS Projects</title>
 </head>
 <body>
-    <button>Welcome Animation</button>
-    <button>OC Animation</button>
+    <button onclick="redirectToFlowerCat()">Welcome Animation</button>
+    <button>Character Animation</button>
     <button>Starry Sky Animation</button>
-    <button>City Animation</button>
+    <button>Room Animation</button>
+    <button onclick="redirectToCake()">Cake Animation</button>
+
+    <script>
+        function redirectToFlowerCat() {
+            window.location.href = "/FlowerCat/flowerCat.html";
+        }
+        function redirectToCake() {
+            window.location.href = "/Cake/cake.html";
+        }
+    </script>
 </body>
 </html>
