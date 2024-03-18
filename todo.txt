@@ -1,6 +1,4 @@
-FlowerCat:
-Cake:
-StarrySky:
+All:
     Responsive
     
 cssProjects:

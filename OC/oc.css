@@ -15,7 +15,7 @@ html, body {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: rgb(60, 60, 192) 0 0 5px 2px;
+    box-shadow: inset rgb(60, 60, 192) 0 0 25px 2px;
 }
 
 @keyframes idleMovement {
