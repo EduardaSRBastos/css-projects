@@ -5,3 +5,5 @@ StarrySky:
     
 cssProjects:
     favicon
+
+Add Readme with details: easter eggs, images, etc.
