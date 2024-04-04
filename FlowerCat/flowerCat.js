@@ -174,17 +174,39 @@ window.onload = function() {
         }
     }
    
-    generateHeadFlowers();
-    if (viewportWidth <= 768) {
-        generateEarFlowers(142.5, 150, 85);
-        generateEarFlowers(-145, 145, -75);
-    } else {
-        generateEarFlowers(285, 300, 85);
-        generateEarFlowers(-290, 290, -75);
+    function resetFlowerAnimation() {
+        var flowerContainer = document.getElementById('flower-container');
+        var container = document.getElementById('container');
+        flowerContainer.style.animation = 'none';
+        flowerContainer.offsetHeight;
+        flowerContainer.style.animation = 'moveUp 2s forwards';
+        container.style.animation = 'none';
+        container.offsetHeight;
+        container.style.animation = 'moveUpDownContainer 3s 9s forwards';
     }
-    generateFaceFlowers();
-};
 
-setTimeout(function() {
-            window.location.href = '../cssProjects.html';
-        }, 15300);
+    function generateFlowersAndResetAnimation() {
+        var flowerContainer = document.getElementById('flower-container');
+
+        while (flowerContainer.firstChild) {
+            flowerContainer.removeChild(flowerContainer.firstChild);
+        }
+
+        setTimeout(function() {
+            generateHeadFlowers();
+            if (viewportWidth <= 768) {
+                generateEarFlowers(142.5, 150, 85);
+                generateEarFlowers(-145, 145, -75);
+            } else {
+                generateEarFlowers(285, 300, 85);
+                generateEarFlowers(-290, 290, -75);
+            }
+            generateFaceFlowers();
+        }, 950);
+        resetFlowerAnimation();
+    }
+
+    generateFlowersAndResetAnimation();
+
+    setInterval(generateFlowersAndResetAnimation, 10500);
+};

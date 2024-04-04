@@ -1,0 +1,29 @@
+<button class="goBack" onclick="goBack()">Go Back</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>   
+
+<style>
+    .goBack {
+        font-size: 20px;
+        font-family: arial;
+        padding: 15px;
+        margin-left: 1.5%;
+        position: fixed;
+        background: white;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 2px solid #d2daff;
+        box-shadow: 0 0 3px #abb9f7;
+        transition: all 0.3s;
+        z-index: 999;
+    }
+
+    .goBack:hover {
+        box-shadow: 0 0 10px #abb9f7;
+        transform: translateY(-5px) scale(1.01);
+    }
+</style>

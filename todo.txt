@@ -3,5 +3,6 @@ All:
     
 cssProjects:
     favicon
+    if clicked with crtl or middle mouse, open in new tab
 
 Add Readme with details: easter eggs, images, etc.
