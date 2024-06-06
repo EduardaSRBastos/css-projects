@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="city.css">
+    <link rel="stylesheet" href="seasons.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Seasons</title>
 </head>
 <body>
-    <div class="spring"></div>
-    <div class="summer"></div>
-    <div class="fall"></div>
-    <div class="winter"></div>
+    <div class="sun"></div>
+    <div class="floor"><div class="grass"></div></div>
+    <div class="clouds" id="cloud1">Spring</div> <div class="clouds" id="cloud2" style="left: 45%; top: 0%"></div>
+    <div class="clouds" id="cloud3" style="left: 65%; top: 10%"></div> <div class="clouds" id="cloud4" style="left: 90%; top: 1%"></div>
+
+    <div class="seasons">
+        <div class="spring"></div>
+        <div class="summer">
+            <div class="ball"></div><div class="ball second-ball"></div>
+            <div class="blanket"></div>
+        </div>
+        <div class="fall"></div>
+        <div class="winter"></div>
+    </div>
     
     <script src="seasons.js"></script>
     <iframe src="../goBackButton.html" frameborder="0" scrolling="no" style="top: 90%; position: fixed;"></iframe>

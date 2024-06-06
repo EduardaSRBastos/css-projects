@@ -1,5 +1,213 @@
+:root {
+    --main-color-blanket: #b30000;
+    --secondary-color-blanket: #d44646;
+  }
+
 html, body {
     height: 100%;
     margin: 0;
     overflow: hidden;
+    background: linear-gradient(to bottom, #b3e1ff, #ddfcff);
+}
+
+@keyframes popUpAnimation {
+    0% {
+        transform: translate(-50%, 100%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, 0%);
+        opacity: 1;
+    }
+}
+
+.sun {
+    width: 420px;
+    height: 400px;
+    position: relative;
+    margin: auto;
+    border-radius: 100%;
+    background: radial-gradient(#e9c602,#ffdc18, #ffff00);
+    top: -30%;
+    animation: downAnimation 50s forwards;
+}
+
+@keyframes downAnimation {
+    0% {
+        transform: translateY(-30%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(300%);
+        opacity: 0.9;
+    }
+}
+
+.floor {
+    width: 120%;
+    height: 25%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background: #3fa132;
+    border-radius: 100% 100% 0 0;
+    overflow: hidden;
+    animation: popUpAnimation 1.2s ease-out forwards;
+}
+
+.grass {
+    width: 2px;
+    height: 10px;
+    background: #3fa132;
+    opacity: 0.3;
+    position: absolute;
+    border-radius: 100%;
+}
+
+.clouds {
+    width: 40%;
+    height: 15%;
+    top: 5%;
+    left: 10%;
+    position: absolute;
+    background: linear-gradient(to top, #ffffff, #ffffff, #d7e7f1);
+    opacity: 0.8;
+    border-radius: 100%;
+    animation: moveClouds 17s linear infinite;
+    color: pink;
+    text-shadow: -1px -1px 0 #eb8394, 1px -1px 0 #eb8394, -1px 1px 0 #eb8394, 1px 1px 0 #eb8394;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+@keyframes moveClouds {
+    from {
+        transform: translateX(250%);
+    }
+    to {
+        transform: translateX(-325%);
+    }
+}
+
+.seasons {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ---------------------------------------------- Spring ---------------------------------------------- */
+
+.flowerPetal {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background: linear-gradient(to bottom, pink, #eb8394);
+    border-radius: 0 60% 0 60%;
+}
+
+.windLine {
+    animation: windAnimation 5s linear;
+}
+
+@keyframes windAnimation {
+    0% {
+        transform: translate(0, 0);
+    }
+    70% {
+        transform: translate(calc(-70vw), calc(70vh));
+    }
+    100% {
+        transform: translate(calc(-100vw - 20px), calc(100vh + 20px));
+    }
+}
+
+.windLine path {
+    stroke: #ffffff;
+    fill: transparent;
+    stroke-width: 0.8;
+    animation: draw 2s linear infinite;
+    transform: rotate(-30deg);
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: -500;
+        stroke-dasharray: 0 500;
+        
+    }
+    100% {
+        stroke-dashoffset: 500;
+        stroke-dasharray: 500 500;
+    }
+}
+
+.flowersFloor {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    border-radius: 0 60% 0 60%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.flowersFloor:nth-child(1) { transform: rotate(0deg); }
+.flowersFloor:nth-child(2) { transform: rotate(72deg); }
+.flowersFloor:nth-child(3) { transform: rotate(144deg); }
+.flowersFloor:nth-child(4) { transform: rotate(216deg); }
+.flowersFloor:nth-child(5) { transform: rotate(288deg); }
+
+
+/* ---------------------------------------------- Summer ---------------------------------------------- */
+
+.ball, .second-ball {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    opacity: 0;
+    border-radius: 100%;
+    animation:
+        x 2s linear infinite alternate,
+        y 2s infinite cubic-bezier(0,3,1,3);
+    animation-play-state: paused;
+    z-index: 2;
+}
+
+@keyframes x {
+   to {
+    left: var(--end-left, 0);
+   }
+}
+@keyframes y {
+   to {
+     top: 800px;
+   }
+}
+
+.second-ball {
+    width: 160px;
+    height: 160px;
+}
+
+.blanket {
+    width: 130px;
+    height: 150px;
+    background:
+        linear-gradient(63deg, var(--main-color-blanket) 23%, transparent 23%) 7px 0,
+        linear-gradient(63deg, transparent 74%, var(--main-color-blanket) 78%),
+        linear-gradient(63deg, transparent 34%, var(--main-color-blanket) 38%, var(--main-color-blanket) 58%, transparent 62%),
+        var(--secondary-color-blanket);
+    background-size: 16px 48px;
+    position: absolute;
+    top: 80%;
+    left: 8%;
+    transform: perspective(600px) rotateX(30deg);
+    box-shadow: inset 0 0 10px #83a132;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    filter: brightness(0.8);
 }
